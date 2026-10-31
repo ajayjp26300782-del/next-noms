@@ -1,6 +1,6 @@
-# NextNoms 🍳
+# NextBites 🍳
 
-NextNoms is a modern, responsive recipe catalog web application built with **Next.js (App Router)** and **TypeScript**. It features a centralized data structure, a reusable typed card component, a responsive CSS grid layout, and a shared navigation layout.
+NextBites is a modern, responsive recipe catalog web application built with **Next.js (App Router)** and **TypeScript**. It features a centralized data structure, a reusable typed card component, a responsive CSS grid layout, and a shared navigation layout.
 
 ## 🚀 Features
 
@@ -27,6 +27,6 @@ Follow these steps to run the project locally on your machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/](https://github.com/)<your-username>/nextnoms.git
-cd nextnoms
+git clone [https://github.com/](https://github.com/)<your-username>/nextbites.git
+cd nextbites
 ```
