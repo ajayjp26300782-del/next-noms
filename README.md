@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NextBites 🍳
 
-## Getting Started
+NextBites is a modern, responsive recipe catalog web application built with **Next.js (App Router)** and **TypeScript**. It features a centralized data structure, a reusable typed card component, a responsive CSS grid layout, and a shared navigation layout.
 
-First, run the development server:
+- 🔗 **Repository:** https://github.com/ajayjp26300782-del/nextbites
+- 🔀 **Open PR:** https://github.com/ajayjp26300782-del/nextbites/pull/1
+
+## 🚀 Features
+
+- **Next.js App Router & TypeScript:** Fully typed architecture ensuring robust type safety (`Recipe` types, strict props, and zero `any` usage).
+- **Responsive Recipe Grid:** Automatically reflows across screen sizes using a flexible CSS Grid layout (`auto-fill` and `minmax`).
+- **Shared Layout & Navigation:** A persistent top navigation bar embedded within the root layout (`app/layout.tsx`), wrapping `{children}`.
+- **Centralized Data:** Clean separation of data and UI via a dedicated mock data module (`app/data/recipes.ts`).
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js (React)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS / Global CSS
+- **Version Control:** Git & GitHub
+
+---
+
+## 📁 Project Structure
+
+```
+app/
+├── components/
+│   ├── NavBar.tsx        # Shared navigation bar
+│   └── RecipeCard.tsx    # Typed, reusable recipe card
+├── data/
+│   └── recipes.ts        # `Recipe` type + mock data
+├── globals.css           # Design tokens & card/grid styles
+├── layout.tsx            # Root layout: <NavBar /> wrapping {children}
+└── page.tsx              # Home page: maps recipes into the grid
+```
+
+---
+
+## ⚙️ Getting Started
+
+Follow these steps to run the project locally on your machine:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/ajayjp26300782-del/nextbites.git
+cd nextbites
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✅ Build
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Build output:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+✓ Compiled successfully
+✓ Finished TypeScript
+✓ Generating static pages (4/4)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+```

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #3d3d3d;
+  --background: #f7f7f5;
   --foreground: #171717;
 }
 
@@ -22,5 +22,120 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* --- Page shell ---------------------------------------------------------- */
+
+.page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  margin-top: 0.5rem;
+  color: color-mix(in srgb, var(--foreground) 65%, transparent);
+}
+
+/* --- Recipe card --------------------------------------------------------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--foreground) 12%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in srgb, var(--foreground) 4%, transparent);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.12);
+}
+
+.card-art {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  font-size: 3.5rem;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--foreground) 8%, transparent),
+    color-mix(in srgb, var(--foreground) 3%, transparent)
+  );
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.125rem 1.25rem;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--foreground) 65%, transparent);
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--foreground) 70%, transparent);
+}
+
+.card-meta span {
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+.difficulty-easy {
+  color: #15803d;
+}
+
+.difficulty-medium {
+  color: #b45309;
+}
+
+.difficulty-hard {
+  color: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  .difficulty-easy {
+    color: #4ade80;
+  }
+
+  .difficulty-medium {
+    color: #fbbf24;
+  }
+
+  .difficulty-hard {
+    color: #f87171;
+  }
 }
