@@ -1,6 +1,10 @@
+// app/recipe/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { getRecipe, recipes } from "../../data/recipes";
 import Link from "next/link";
+
+// Opt out of instant route checking for this dynamic page
+export const instant = false;
 
 export async function generateStaticParams() {
   return recipes.map((recipe) => ({
@@ -49,7 +53,7 @@ export default async function RecipePage({
               ⏱ {recipe.minutes} minutes
             </span>
             <span
-              className={`px-3 py-1 rounded-full bg-neutral-800/80 font-medium difficulty-${recipe.difficulty.toLowerCase()}`}
+              className={`px-3 py-1 rounded-full bg-neutral-800/80 font-medium`}
             >
               {recipe.difficulty}
             </span>
