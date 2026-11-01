@@ -1,5 +1,6 @@
 import RecipeCard from "./components/RecipeCard";
 import { recipes } from "./data/recipes";
+import RecipeGrid from "./components/RecipeGrid";
 
 export default function Home() {
   return (
